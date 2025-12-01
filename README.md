@@ -1,7 +1,7 @@
 **NOMBRES:** CRISTHIAN GABRIEL
 **APELLIDOS:** LAIME ARCANI
 
-#  Buenas
+# Buenas
 
 **HABILIDADES:** En desarrollo 🔨
 
@@ -27,8 +27,7 @@ git clone https://github.com/cristhianlaimearcani-jpg/PROYECTO-SPOTIFY-PW1.git
 ```
 ---
 ## Diseño
+
 <img width="728" height="750" alt="Captura de pantalla 2025-12-01 031943" src="https://github.com/user-attachments/assets/66136071-43c1-47e7-bdbf-28a4af63bd0c" />
 
 **Mas imagenes:** Los podras encontrar en figma-img que esta en el repositorio.
----
-
