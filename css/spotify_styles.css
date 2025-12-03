@@ -194,3 +194,113 @@ footer h3 {
     font-size: 15px;
     margin-bottom: 20px;
 }
+
+.abrir, .cerrar {
+    display: none;
+}
+
+.barra-inferior {
+    display: none;
+}
+
+ @media screen and (max-width: 550px){
+    .abrir, .cerrar {
+        display: block;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 20px;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    .barra-inferior {
+        display: flex;
+        justify-content: space-around;
+        font-weight: bold;
+        padding-top: 10px;
+        position: fixed;
+        color: white;
+        bottom: 0;
+        background-color: black;
+        width: 100%;
+        height: 50px;
+    }
+    .btn-barra {
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        border: none;
+        font-size: 15px;
+    }
+    .buscador-barra.activo {
+        display: inline-block;
+    }
+
+    .abrir{
+        color: white;
+        background-color: black;
+    }
+    .cerrar{
+        width: 100%;
+    }
+    .contenedor-items{
+        justify-content: center;
+    }
+    .fila h2 {
+        text-align: center;
+    }
+    .nav-top {
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav-btn {
+        flex-direction: column;
+    }
+    .nav-derecha {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: black;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        gap: 20px;
+    }
+    .nav-derecha.btn-nav {
+        display: flex;
+    }
+    .btn-iniciar {
+        color: white;
+        background-color: black;
+    }
+    .buscador {
+        display: none;
+    }
+    .sidebar {
+        display: none;
+    }
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 0;
+        gap: 40px;
+    }
+
+    .logo-footer {
+        justify-content: center;
+    }
+
+    footer ul {
+        padding: 0;
+    }
+
+    footer li {
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+
+    footer h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+ }

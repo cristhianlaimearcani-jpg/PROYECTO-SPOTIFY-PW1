@@ -193,3 +193,59 @@ footer h3 {
     height: 40px;
     border-radius: 40px;
 }
+
+/* responsividad con media queries */
+
+/* para celular */
+@media (max-width: 600px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 0;
+        gap: 40px;
+    }
+
+    .logo-footer {
+        justify-content: center;
+    }
+
+    footer ul {
+        padding: 0;
+    }
+
+    footer li {
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+
+    footer h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .titulo-sign {
+        width: 90%; 
+    }
+
+    .titulo-sign h2 {
+        font-size: 220%;
+    }
+    .titulo-ayuda {
+        width: 90%;
+        margin: 40px auto 20px auto;
+    }
+
+    .titulo-ayuda h2 {
+        font-size: 200%;
+    }
+
+    .contactanos {
+        width: 90%;
+        height: auto;
+        padding: 40px 0;
+    }
+
+    .contactanos form {
+        width: 70%;
+    }
+}

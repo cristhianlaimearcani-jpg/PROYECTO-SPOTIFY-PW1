@@ -9,6 +9,7 @@
     
     <link rel="stylesheet" href="css/spotify_styles.css">
 </head>
+
 <body>
 
     <!-- barra de navegacion superior -->
@@ -21,9 +22,11 @@
                 <div class="titulo-nav">
                     <h1>Spotify</h1>
                 </div>
-                <input class="buscador" type="text" placeholder="¿Que quieres reproducir?">
+                <input class="buscador" id="buscador" type="text" placeholder="¿Que quieres reproducir?">
             </div>
-            <div class="nav-derecha">
+            <button id="abrir" class="abrir"><i class="fa-solid fa-bars"></i></button>
+            <div class="nav-derecha" id="nav">
+                <button id="cerrar" class="cerrar">Cerrar</button>
                 <div class="nav-btn">
                     <a href="premium.html" class="btn-premium">Premium</a>
                     <a href="ayuda.html" target="_blank" class="btn-ayuda">Ayuda</a>
@@ -33,6 +36,15 @@
             </div>
         </nav>
     </header>
+
+    <div class="barra-inferior">
+        <nav class="barra">
+            <a href="Proyecto PW1.html">Inicio</a>
+            <button class="btn-barra" id="barra-buscar">Buscar</button>
+            <a href="bibliotecca">Tu biblioteca</a>
+            <a href="premium.html">Premium</a>
+        </nav>
+    </div>
 
     <div class="principal">
         <!-- sidebar para biblioteca -->
@@ -214,6 +226,8 @@
         </main>
     </div>
 
+    <!-- js -->
+    <script src="main.js"></script>
     
     <!-- script iconos -->
     <script src="https://kit.fontawesome.com/f22a0d6df1.js" crossorigin="anonymous"></script>

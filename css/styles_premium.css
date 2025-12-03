@@ -125,3 +125,36 @@ footer h3 {
     font-size: 15px;
     margin-bottom: 20px;
 }
+
+
+/* responsividad con media queries */
+
+
+/* para celular */
+@media (max-width: 600px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 0;
+        gap: 40px;
+    }
+
+    .logo-footer {
+        justify-content: center;
+    }
+
+    footer ul {
+        padding: 0;
+    }
+
+    footer li {
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+
+    footer h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+}
