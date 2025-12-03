@@ -20,6 +20,8 @@ Habrá una sección de actualizaciones donde se describirá el progreso del proy
 ## Actualizaciones
 **30/11/2025:** se realizo la estructura html, se trato de hacer un buen uso de etiquetas semanticas, se hizo todas las paginas que se diseño en el figma. 
 **Proximamente:** diseño css tratando de que sea lo mas responsivo posible.
+**3/12/2025:** se realizo un diseño css para cada pagina, aun no tiene funcion sus botones y demas, pero se trato de hacer el diseño exacto de figma con algunos ligeros cambios.
+**Proximamente:** funcionalidad con js de los botones, se tratara de poner un reproductor de musica usando algunas apis.
 
 ## Clona este repositorio
 ```bash

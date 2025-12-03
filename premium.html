@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premium PW2</title>
+
+    <link rel="stylesheet" href="css/styles_premium.css">
 </head>
 <body>
     <!-- logo -->
@@ -16,35 +18,101 @@
 
     <!-- cuerpo -->
     <main>
-        <section class="individual">
-            <h2>Individual</h2>
-            <strong>USD 6,49 al mes</strong>
-            <br>
-            <ul>
-                <li>1 Cuenta premium</li>
-                <li>Cancela cuando quieras</li>
-            </ul>
-            <button type="button">Obtener Premium Individual</button>
-        </section>
-        <section class="free">
-            <h2>Spotify FREE</h2>
-            <strong>USD 0 al mes</strong>
-            <br>
-            <ul>
-                <li>Spotify por defecto</li>
-            </ul>
-            <button type="button">Obtener Spotify Free</button>
-        </section>
-        <section class="estudiantes">
-            <h2>USD 6,49 al mes</h2>
-            <br>
-            <ul>
-                <li>1 Cuenta premium verificada</li>
-                <li>Descuento para estudiantes</li>
-                <li>Cancela cuando quieras</li>
-            </ul>
-            <button type="button">Obtener Premium Estudiantes</button>
-        </section>
+        <div class="planes">
+            <!-- plan 1 -->
+            <section class="individual">
+                <div class="titulos">
+                    <div class="logo-titulo">
+                        <img src="img/logo-spotify.png" alt="logo de spotify">
+                        <h2>Spotify</h2>
+                    </div>
+                    <div class="tipo-plan">
+                        <h2 style="color: #D13996;">Individual</h2>
+                    </div>
+                    <strong>USD 6,49 al mes</strong>    
+                    <hr>
+                <ul>
+                    <li>1 Cuenta premium</li>
+                    <li>Cancela cuando quieras</li>
+                </ul>
+                </div>
+
+                <button type="button" style="background-color: #D13996;">Obtener Premium Individual</button>
+            </section>
+
+            <!-- plan 2 -->
+            <section class="free">
+                <div class="titulos">
+                    <div class="logo-titulo">
+                        <img src="img/logo-spotify.png" alt="logo de spotify">
+                        <h2>Spotify</h2>
+                    </div>
+                    <div class="tipo-plan">
+                        <h2 style="color: #43D139;">Spotify FREE</h2>
+                    </div>
+                    <strong>USD 0 al mes</strong>
+                    <hr>
+                    <ul>
+                        <li>Spotify por defecto</li>
+                    </ul>
+                </div>
+                
+                <button type="button" style="background-color: #43D139;">Obtener Spotify Free</button>
+            </section>
+
+            <!-- plan 3 -->
+            <section class="estudiantes">
+                <div class="titulos">
+                    <div class="logo-titulo">
+                        <img src="img/logo-spotify.png" alt="logo de spotify">
+                        <h2>Spotify</h2>
+                    </div>
+                    <div class="tipo-plan"> 
+                        <h2 style="color: #D1AB39;">Estudiantes</h2>
+                    </div>
+                    <strong>USD 6,49 al mes</strong>
+                    <hr>
+                    <ul>
+                        <li>1 Cuenta premium verificada</li>
+                        <li>Descuento para estudiantes</li>
+                        <li>Cancela cuando quieras</li>
+                    </ul>   
+                </div>
+                
+                <button type="button" style="background-color: #D1AB39;">Obtener Premium Estudiantes</button>
+            </section>
+        </div>
     </main>
+    <!-- footer -->
+     <footer>
+        <div class="logo-footer">
+            <img src="img/logo-spotify.png" alt="logo de spotify">
+            <h3>Spotify</h3>
+        </div>
+        <div class="container-empresa">
+            <h3>Empresa</h3>
+            <ul>
+                <li><a href="https://www.facebook.com/spotifyusa/" target="_blank">Facebook</a></li>
+                <li><a href="https://www.instagram.com/spotify/" target="_blank">Instagram</a></li>
+                <li><a href="https://www.tiktok.com/@spotify" target="_blank">TikTok</a></li>
+            </ul>
+        </div>
+        <div class="container-planes">
+            <h3>Planes de Spotify</h3>
+            <ul>
+                <li><a href="premium.html">Individual</a></li>
+                <li><a href="premium.html">Estudiantil</a></li>
+                <li><a href="premium.html">Spotify FREE</a></li>
+            </ul>
+        </div>
+        <div class="container-enlaces">
+            <h3>Enlaces útiles</h3>
+            <ul>
+                <li><a href="Proyecto PW1.html">Inicio</a></li>
+                <li><a href="premium.html">Premium</a></li>
+                <li><a href="ayuda.html" target="_blank">Ayuda</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>
