@@ -32,7 +32,7 @@
                     <a href="ayuda.html" target="_blank" class="btn-ayuda">Ayuda</a>
                     <a href="registrate.html" class="btn-registrate">Registrate</a>
                 </div>
-                <a href="iniciar-secion.html" class="btn-iniciar">Iniciar secion</a>
+                <a href="iniciar-secion.html" class="btn-iniciar">Iniciar sesión</a>
             </div>
         </nav>
     </header>
@@ -55,10 +55,10 @@
                     <i class="fa-solid fa-plus"></i>
                 </button>
             </div>
-            <div class="crear-playlist-nuevo">
-                <strong>Crea tu primera playlist</strong>
-                <p>¡Es muy facil! Te vamos a ayudar</p>
-                <button class="crear-playlist">Crear playlist</button>
+            <div class="biblioteca-contenido" id="biblioteca-contenido">
+                <div class="lista-biblioteca" id="lista-biblioteca">
+                    <p class="mensaje-biblioteca">Aún no tienes canciones en tu biblioteca...</p>
+                </div>
             </div>
         </aside>
 
@@ -66,10 +66,10 @@
         <main>
             <!-- fila 1 de musica popular -->
             <section class="fila">
-                <h2>Canciones en tendencia</h2>
-                <div class="contenedor-items">
+                <h2 id="titulo-fila-1">Canciones en tendencia</h2>
+                <div class="contenedor-items" id="contenedor-fila-1">
                     <div class="item">
-                        <img src="img/musica.jpg" alt="Canción 1">
+                        <img src="" alt="Canción 1">
                         <div class="texto">
                             <p>cancion 1</p>    
                         </div>
@@ -78,7 +78,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img src="img/musica.jpg" alt="Canción 2">
+                        <img src="" alt="Canción 2">
                         <div class="texto">
                             <p>cancion 2</p>    
                         </div>
@@ -87,7 +87,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img src="img/musica.jpg" alt="Canción 3">
+                        <img src="" alt="Canción 3">
                         <div class="texto">
                             <p>cancion 3</p>    
                         </div>
@@ -96,7 +96,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img src="img/musica.jpg" alt="Canción 4">
+                        <img src="" alt="Canción 4">
                         <div class="texto">
                             <p>cancion 4</p>    
                         </div>
@@ -109,10 +109,10 @@
 
             <!-- fila 2 de artistas populares -->
             <section class="fila">
-                <h2>Artistas populares</h2>
-                <div class="contenedor-items">
+                <h2 id="titulo-fila-2">Artistas populares</h2>
+                <div class="contenedor-items" id="contenedor-fila-2">
                     <div class="item">
-                        <img class="artista" src="img/image.png" alt="Artista 1">
+                        <img class="artista" src="" alt="Artista 1">
                         <div class="texto">
                             <p>Artista 1</p>    
                         </div>
@@ -121,7 +121,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img class="artista" src="img/image.png" alt="Artista 2">
+                        <img class="artista" src="" alt="Artista 2">
                         <div class="texto">
                             <p>Artista 2</p>    
                         </div>
@@ -130,7 +130,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img class="artista" src="img/image.png" alt="Artista 3">
+                        <img class="artista" src="" alt="Artista 3">
                         <div class="texto">
                             <p>Artista 3</p>    
                         </div>
@@ -139,7 +139,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img class="artista" src="img/image.png" alt="Artista 4">
+                        <img class="artista" src="" alt="Artista 4">
                         <div class="texto">
                             <p>Artista 4</p>    
                         </div>
@@ -152,10 +152,10 @@
 
             <!-- fila 3 de albunes y sencillos populares -->
             <section class="fila">
-                <h2>Álbumes y sencillos populares</h2>
-                <div class="contenedor-items">
+                <h2 id="titulo-fila-3">Álbumes y sencillos populares</h2>
+                <div class="contenedor-items" id="contenedor-fila-3">
                     <div class="item">
-                        <img src="img/musica2.png" alt="Recomendado 1">
+                        <img src="" alt="Recomendado 1">
                         <div class="texto">
                             <p>cancion 1</p>    
                         </div>
@@ -164,7 +164,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img src="img/musica2.png" alt="recomendado 2">
+                        <img src="" alt="recomendado 2">
                         <div class="texto">
                             <p>cancion 2</p>    
                         </div>
@@ -173,7 +173,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img src="img/musica2.png" alt="Recomendado 3">
+                        <img src="" alt="Recomendado 3">
                         <div class="texto">
                             <p>cancion 3</p>    
                         </div>
@@ -182,7 +182,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img src="img/musica2.png" alt="Recomendado 4">
+                        <img src="" alt="Recomendado 4">
                         <div class="texto">
                             <p>cancion 4</p>    
                         </div>
@@ -224,11 +224,39 @@
                 </div>
             </footer>
         </main>
-    </div>
 
+        <!-- sidebar derecho -->
+         <aside class="sidebar-derecho" id="sidebar-derecho">
+            <h2>Información del Artista <button class="btn-cerrar-sidebar" onclick="cerrarSidebar()">×</button></h2>
+            
+            <div class="info-artista" id="info-artista">        
+                <img src="img/image.png" alt="Artista" id="foto-artista" class="foto-artista">
+                <h3 id="nombre-artista">Nombre del artista</h3>
+                
+                <div class="datos-artista">
+                    <div class="dato">
+                        <span class="dato-titulo">Seguidores:</span>
+                        <span class="dato-valor" id="seguidores">--</span>
+                    </div>
+                    <div class="dato">
+                        <span class="dato-titulo">Álbumes:</span>
+                        <span class="dato-valor" id="albumes">--</span>
+                    </div>
+                </div>
+                
+                <div class="letra-cancion" id="letra-cancion">
+                    <h4>Sobre el artista</h4>
+                    <p class="texto-letra" id="texto-letra">
+                        info
+                    </p>
+                </div>
+            </div>
+        </aside>
+    </div>
+    
+     <div id="reproductor-musica" class="reproductor-musica"></div>
     <!-- js -->
     <script src="main.js"></script>
-    
     <!-- script iconos -->
     <script src="https://kit.fontawesome.com/f22a0d6df1.js" crossorigin="anonymous"></script>
 </body>
