@@ -1,3 +1,4 @@
+
 /* MENU HAMBURGUESA SIMPLE */
 const nav = document.querySelector("#nav");
 const abrir = document.querySelector("#abrir");
@@ -14,6 +15,9 @@ cerrar.addEventListener("click", () => {
     cerrar.style.display = "none";   
     abrir.style.display = "block";  
 });
+if (!localStorage.getItem('favoritos')) {
+    localStorage.setItem('favoritos', JSON.stringify([]));
+}
 /* api */
 window.onload = function() {
     cargarInicio();

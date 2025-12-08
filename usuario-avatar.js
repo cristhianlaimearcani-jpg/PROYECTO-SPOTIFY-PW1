@@ -1,24 +1,20 @@
-// usuario-avatar.js - Transformar botón en avatar
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // Verificar si el usuario está logueado
+
     function usuarioEstaLogueado() {
         return localStorage.getItem('is_logged_in') === 'true';
     }
     
-    // Obtener el botón de iniciar sesión
+
     const botonIniciarSesion = document.querySelector('.btn-iniciar');
     
     if (botonIniciarSesion && usuarioEstaLogueado()) {
         transformarBotonEnAvatar(botonIniciarSesion);
     }
     
-    // Función para transformar el botón en avatar
     function transformarBotonEnAvatar(boton) {
         const email = localStorage.getItem('usuario_actual');
         const iniciales = localStorage.getItem('usuario_iniciales') || obtenerIniciales(email);
         
-        // Crear el avatar circular
         boton.innerHTML = '';
         boton.style.cssText = `
             color: black;
@@ -72,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const email = localStorage.getItem('usuario_actual');
         const plan = localStorage.getItem('mi_plan') || 'Spotify FREE';
         
-        // Crear menú
         const menu = document.createElement('div');
         menu.className = 'menu-usuario';
         menu.style.cssText = `
@@ -86,8 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
             z-index: 10000;
             animation: aparecerMenu 0.3s ease;
         `;
-        
-        // Contenido del menú
+
         menu.innerHTML = `
             <div style="text-align: center; margin-bottom: 15px;">
                 <div style="
