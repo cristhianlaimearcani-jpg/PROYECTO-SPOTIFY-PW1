@@ -26,7 +26,7 @@
             </div>
             <button id="abrir" class="abrir"><i class="fa-solid fa-bars"></i></button>
             <div class="nav-derecha" id="nav">
-                <button id="cerrar" class="cerrar">Cerrar</button>
+                <button id="cerrar" class="cerrar"><i class="fa-solid fa-circle-xmark"></i></button>
                 <div class="nav-btn">
                     <a href="premium.html" class="btn-premium">Premium</a>
                     <a href="ayuda.html" target="_blank" class="btn-ayuda">Ayuda</a>
@@ -36,13 +36,25 @@
             </div>
         </nav>
     </header>
-
+    <!-- nav inferior -->
     <div class="barra-inferior">
         <nav class="barra">
-            <a href="Proyecto PW1.html">Inicio</a>
-            <button class="btn-barra" id="barra-buscar">Buscar</button>
-            <a href="bibliotecca">Tu biblioteca</a>
-            <a href="premium.html">Premium</a>
+            <button class="btn-inicio">
+                <i class="fa-solid fa-house"></i>    
+                <p>Inicio</p>
+            </button>
+            <button class="btn-buscar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p>Buscar</p>
+            </button>
+            <button class="biblioteca">
+                <i class="fa-solid fa-folder-closed"></i>
+                <p>Tu biblioteca</p>
+            </button>
+            <button class="premium">
+                <i class="fa-solid fa-dollar-sign"></i>
+                <p>Premium</p>
+            </button>
         </nav>
     </div>
 
@@ -51,13 +63,16 @@
         <aside class="sidebar">
             <div class="sidebar-titulo">
                 <h2>Tu biblioteca</h2>
-                <button class="btn-sidebar">
-                    <i class="fa-solid fa-plus"></i>
-                </button>
             </div>
             <div class="biblioteca-contenido" id="biblioteca-contenido">
                 <div class="lista-biblioteca" id="lista-biblioteca">
-                    <p class="mensaje-biblioteca">Aún no tienes canciones en tu biblioteca...</p>
+                    <div class="favoritos" id="favoritos">
+                        <img src="" alt="">
+                        <div class="texto-cancion">
+                            <p><strong>cancion</strong></p>
+                            <p>artista</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </aside>
@@ -67,6 +82,8 @@
             <!-- fila 1 de musica popular -->
             <section class="fila">
                 <h2 id="titulo-fila-1">Canciones en tendencia</h2>
+                <button class="btn-flecha btn-izq" id="btn-izq"><i class="fa-solid fa-angle-left"></i></button>
+                <button class="btn-flecha btn-der" id="btn-der"><i class="fa-solid fa-angle-right"></i></button>
                 <div class="contenedor-items" id="contenedor-fila-1">
                     <div class="item">
                         <img src="" alt="Canción 1">
@@ -110,6 +127,8 @@
             <!-- fila 2 de artistas populares -->
             <section class="fila">
                 <h2 id="titulo-fila-2">Artistas populares</h2>
+                <button class="btn-flecha btn-izq" id="btn-izq"><i class="fa-solid fa-angle-left"></i></button>
+                <button class="btn-flecha btn-der" id="btn-der"><i class="fa-solid fa-angle-right"></i></button>
                 <div class="contenedor-items" id="contenedor-fila-2">
                     <div class="item">
                         <img class="artista" src="" alt="Artista 1">
@@ -152,7 +171,9 @@
 
             <!-- fila 3 de albunes y sencillos populares -->
             <section class="fila">
-                <h2 id="titulo-fila-3">Álbumes y sencillos populares</h2>
+                <h2 id="titulo-fila-3">Sugerencias para hoy</h2>
+                <button class="btn-flecha btn-izq" id="btn-izq"><i class="fa-solid fa-angle-left"></i></button>
+                <button class="btn-flecha btn-der" id="btn-der"><i class="fa-solid fa-angle-right"></i></button>
                 <div class="contenedor-items" id="contenedor-fila-3">
                     <div class="item">
                         <img src="" alt="Recomendado 1">
@@ -193,6 +214,7 @@
                 </div>
             </section>
             <!-- pie de pagina  -->
+            <hr>
             <footer>
                 <div class="logo-footer">
                     <img src="img/logo-spotify.png" alt="logo de spotify">
@@ -227,10 +249,10 @@
 
         <!-- sidebar derecho -->
          <aside class="sidebar-derecho" id="sidebar-derecho">
-            <h2>Información del Artista <button class="btn-cerrar-sidebar" onclick="cerrarSidebar()">×</button></h2>
+            <h2>Información del Artista <button class="btn-cerrar-sidebar" onclick="cerrarSidebar()"><i class="fa-solid fa-xmark"></i></button></h2>
             
             <div class="info-artista" id="info-artista">        
-                <img src="img/image.png" alt="Artista" id="foto-artista" class="foto-artista">
+                <img src="" alt="Artista" id="foto-artista" class="foto-artista">
                 <h3 id="nombre-artista">Nombre del artista</h3>
                 
                 <div class="datos-artista">
@@ -249,6 +271,9 @@
                     <p class="texto-letra" id="texto-letra">
                         info
                     </p>
+                </div>
+                <div class="letra" id="letra">
+
                 </div>
             </div>
         </aside>
