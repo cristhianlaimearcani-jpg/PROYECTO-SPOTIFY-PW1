@@ -278,11 +278,10 @@ function mostrarFavoritos() {
     }
     contenedor.innerHTML = html;
     
-    // Agregar evento para reproducir (clic en toda la canción excepto el botón)
     const canciones = document.querySelectorAll('.cancion-favorita');
     canciones.forEach((cancionElement, index) => {
         cancionElement.addEventListener('click', function(e) {
-            // Si hicieron clic en el botón de eliminar, no reproducir
+
             if (!e.target.closest('.btn-eliminar')) {
                 const cancion = favoritos[index];
                 buscarYReproducirFavorita(`${cancion.title} ${cancion.artist}`);
@@ -446,7 +445,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnInicio = document.querySelector('.btn-inicio');
     if (btnInicio) {
         btnInicio.addEventListener('click', function() {
-            window.location.href = 'Proyecto Pw1.html';
+            window.location.href = 'index.html';
         });
     }
     const btnPremium = document.querySelector('.premium');

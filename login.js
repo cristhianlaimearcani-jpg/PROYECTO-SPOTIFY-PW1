@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('usuario_iniciales', iniciales);
             
             setTimeout(function() {
-                window.location.href = 'Proyecto PW1.html';
+                window.location.href = 'index.html';
             }, 1000);
         } else {
             alert('Email o contraseña incorrectos');
@@ -91,7 +91,7 @@ function obtenerIniciales(email) {
             alert('Tu problema está siendo atendido\n\nNos pondremos en contacto contigo pronto');
 
             setTimeout(function() {
-                window.location.href = 'Proyecto PW1.html';
+                window.location.href = 'index.html';
             }, 2000);
         });
     }
@@ -128,7 +128,7 @@ function obtenerIniciales(email) {
                 alert(`Felicidades ${usuario}!\n\nHas seleccionado el plan: ${planNombre}\n\nTu plan ha sido activado exitosamente`);
 
                 setTimeout(() => {
-                    window.location.href = 'Proyecto PW1.html';
+                    window.location.href = 'index.html';
                 }, 2000);
             });
         });
