@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Registro exitoso! Ahora puedes iniciar sesión');
             
             setTimeout(function() {
-                window.location.href = 'html/iniciar-secion.html';
+                window.location.href = '../html/iniciar-secion.html';
             }, 1000);
         });
     }
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('usuario_iniciales', iniciales);
             
             setTimeout(function() {
-                window.location.href = 'index.html';
+                window.location.href = '../index.html';
             }, 1000);
         } else {
             alert('Email o contraseña incorrectos');
@@ -85,10 +85,10 @@ function obtenerIniciales(email) {
             });
             localStorage.setItem('problemas_ayuda', JSON.stringify(problemas));
 
-            alert('Tu problema está siendo atendido\n\nNos pondremos en contacto contigo pronto');
+            alert('Tu problema está siendo atendido. Nos pondremos en contacto contigo pronto');
 
             setTimeout(function() {
-                window.location.href = 'index.html';
+                window.location.href = '../index.html';
             }, 2000);
         });
     }
@@ -109,7 +109,7 @@ function obtenerIniciales(email) {
                 if (!estaLogueado()) {
                     alert('Primero debes iniciar sesión');
                     setTimeout(() => {
-                        window.location.href = 'html/iniciar-secion.html';
+                        window.location.href = '../html/iniciar-secion.html';
                     }, 1500);
                     return;
                 }
@@ -122,10 +122,10 @@ function obtenerIniciales(email) {
                 localStorage.setItem('mi_plan', planNombre);
                 localStorage.setItem('plan_seleccionado', planNombre);
                 
-                alert(`Felicidades ${usuario}!\n\nHas seleccionado el plan: ${planNombre}\n\nTu plan ha sido activado exitosamente`);
+                alert(`Felicidades ${usuario}. Has seleccionado el plan: ${planNombre}`);
 
                 setTimeout(() => {
-                    window.location.href = 'index.html';
+                    window.location.href = '../index.html';
                 }, 2000);
             });
         });

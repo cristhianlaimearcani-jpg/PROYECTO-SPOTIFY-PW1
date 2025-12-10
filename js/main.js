@@ -175,15 +175,6 @@ function ponerTitulosNormales() {
     document.getElementById('titulo-fila-3').textContent = 'Álbumes y sencillos populares';
 }
 
-function mostrarInfoEnSidebar(cancion) {
-    const sidebar = document.getElementById('sidebar-derecho');
-    if (!sidebar) return;
-    sidebar.style.display = 'block';
-    obtenerInfoArtista(cancion.artist.id);
-
-    obtenerLetraCancion(cancion.artist.name, cancion.title);
-}
-
 function obtenerInfoArtista(idArtista) {
     const url = 'https://deezerdevs-deezer.p.rapidapi.com/artist/' + idArtista;
     const headers = {
@@ -204,12 +195,6 @@ function obtenerInfoArtista(idArtista) {
         });
 }
 
-function cerrarSidebar() {
-    const sidebar = document.getElementById('sidebar-derecho');
-    if (sidebar) {
-        sidebar.style.display = 'none';
-    }
-}
 
 document.addEventListener('DOMContentLoaded', function() {
     const filas = document.querySelectorAll('.fila');
@@ -316,68 +301,6 @@ function buscarYReproducirFavorita(busqueda) {
         })
 }
 
-function mostrarArtistas(listaCanciones, idContenedor) {
-    const contenedor = document.getElementById(idContenedor);
-    if (!contenedor) return;
-    
-    contenedor.innerHTML = '';
-    
-    const artistasUnicos = [];
-    const artistasVistos = new Set();
-    
-    for (let i = 0; i < listaCanciones.length; i++) {
-        const cancion = listaCanciones[i];
-        const artista = cancion.artist;
-        
-        if (!artistasVistos.has(artista.id)) {
-            artistasVistos.add(artista.id);
-            artistasUnicos.push(artista);
-            
-            if (artistasUnicos.length >= 7) {
-                break;
-            }
-        }
-    }
-    
-    for (let i = 0; i < artistasUnicos.length; i++) {
-        const artista = artistasUnicos[i];
-        const divArtista = document.createElement('div');
-        divArtista.className = 'item';
-        
-        divArtista.innerHTML = `
-            <img src="${artista.picture_medium}" alt="${artista.name}" class="artista">
-            <div class="texto">
-                <p>${artista.name.substring(0, 20)}${artista.name.length > 20 ? '...' : ''}</p>    
-            </div>
-            <div class="segundo-texto">
-                <p>Artista</p>
-            </div>
-        `;
-        
-        divArtista.onclick = function() {
-            mostrarInfoArtistaEnSidebar(artista.id);
-        };
-        
-        contenedor.appendChild(divArtista);
-    }
-
-    if (artistasUnicos.length === 0) {
-        contenedor.innerHTML = '<p class="mensaje-biblioteca">No se encontraron artistas</p>';
-    }
-}
-function mostrarInfoArtistaEnSidebar(idArtista) {
-    const sidebar = document.getElementById('sidebar-derecho');
-    if (!sidebar) return;
-    
-    sidebar.style.display = 'block';
-    
-    const letraElemento = document.getElementById('letra');
-    if (letraElemento) {
-        letraElemento.innerHTML = '<div class="mensaje-biblioteca">Haz clic en una canción para ver su letra</div>';
-    }
-    
-    obtenerInfoArtista(idArtista);
-}
 
 function letraCancion (idArtista, idCancion) {
     const letra = 'https://api.lyrics.ovh/v1/' + idArtista + '/' + idCancion;
@@ -418,40 +341,18 @@ function obtenerLetraCancion(artista, titulo) {
             mostrarLetraEnSidebar('No se pudo cargar la letra de esta canción');
         });
 }
-function mostrarLetraEnSidebar(letra) {
-    const letraElemento = document.getElementById("letra");
-    console.log("Elemento letra encontrado:", letraElemento);
-    
-    if (!letraElemento) {
-        console.error("No se encontró el elemento #letra");
-        return;
-    }
-    
-    letraElemento.innerHTML = '';
-    
-    const contenido = document.createElement('div');
-    contenido.className = 'letra-contenido';
-    
-    contenido.innerHTML = `
-        <h4>Letra de la canción</h4>
-        <div class="texto-letra-cancion">${letra.replace(/\n/g, '<br>')}</div>
-    `;
-    
-    letraElemento.appendChild(contenido);
-    console.log("Letra mostrada en sidebar");
-}
 document.addEventListener('DOMContentLoaded', function() {
 
     const btnInicio = document.querySelector('.btn-inicio');
     if (btnInicio) {
         btnInicio.addEventListener('click', function() {
-            window.location.href = 'index.html';
+            window.location.href = '../index.html';
         });
     }
     const btnPremium = document.querySelector('.premium');
     if (btnPremium) {
         btnPremium.addEventListener('click', function() {
-            window.location.href = 'html/premium.html'; 
+            window.location.href = '../html/premium.html'; 
         });
     
     }
@@ -516,3 +417,52 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+function mostrarArtistas(listaCanciones, idContenedor) {
+    const contenedor = document.getElementById(idContenedor);
+    if (!contenedor) return;
+    
+    contenedor.innerHTML = '';
+    
+    const artistasUnicos = [];
+    const artistasVistos = new Set();
+    
+    for (let i = 0; i < listaCanciones.length; i++) {
+        const cancion = listaCanciones[i];
+        const artista = cancion.artist;
+        
+        if (!artistasVistos.has(artista.id)) {
+            artistasVistos.add(artista.id);
+            artistasUnicos.push(artista);
+            
+            if (artistasUnicos.length >= 7) {
+                break;
+            }
+        }
+    }
+    
+    for (let i = 0; i < artistasUnicos.length; i++) {
+        const artista = artistasUnicos[i];
+        const divArtista = document.createElement('div');
+        divArtista.className = 'item';
+        
+        divArtista.innerHTML = `
+            <img src="${artista.picture_medium}" alt="${artista.name}" class="artista">
+            <div class="texto">
+                <p>${artista.name.substring(0, 20)}${artista.name.length > 20 ? '...' : ''}</p>    
+            </div>
+            <div class="segundo-texto">
+                <p>Artista</p>
+            </div>
+        `;
+        
+        divArtista.onclick = function() {
+            mostrarInfoArtistaEnSidebar(artista.id);
+        };
+        
+        contenedor.appendChild(divArtista);
+    }
+
+    if (artistasUnicos.length === 0) {
+        contenedor.innerHTML = '<p class="mensaje-biblioteca">No se encontraron artistas</p>';
+    }
+}
