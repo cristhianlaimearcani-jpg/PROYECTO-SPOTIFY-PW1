@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("Sistema de login/registro cargado");
-    
-
     const signupForm = document.querySelector('.sign form');
     if (signupForm) {
         signupForm.addEventListener('submit', function(e) {
@@ -16,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Registro exitoso! Ahora puedes iniciar sesión');
             
             setTimeout(function() {
-                window.location.href = 'iniciar-secion.html';
+                window.location.href = 'html/iniciar-secion.html';
             }, 1000);
         });
     }
@@ -112,7 +109,7 @@ function obtenerIniciales(email) {
                 if (!estaLogueado()) {
                     alert('Primero debes iniciar sesión');
                     setTimeout(() => {
-                        window.location.href = 'iniciar-secion.html';
+                        window.location.href = 'html/iniciar-secion.html';
                     }, 1500);
                     return;
                 }
