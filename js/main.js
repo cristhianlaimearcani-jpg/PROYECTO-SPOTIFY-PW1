@@ -316,13 +316,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnInicio = document.querySelector('.btn-inicio');
     if (btnInicio) {
         btnInicio.addEventListener('click', function() {
-            window.location.href = '../index.html';
+            window.location.href = 'index.html';
         });
     }
     const btnPremium = document.querySelector('.premium');
     if (btnPremium) {
         btnPremium.addEventListener('click', function() {
-            window.location.href = '../html/premium.html'; 
+            window.location.href = 'html/premium.html'; 
         });
     
     }
@@ -503,5 +503,5 @@ function obtenerLetraCancion(artista, titulo) {
 
 function irAInfo(cancion) {
     localStorage.setItem('cancionSeleccionada', JSON.stringify(cancion));
-    window.open("../html/info.html", "_blank");
+    window.open("html/info.html", "_blank");
 }
