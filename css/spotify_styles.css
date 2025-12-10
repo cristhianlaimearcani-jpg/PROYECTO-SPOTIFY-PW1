@@ -240,6 +240,9 @@ footer h3 {
     margin-bottom: 20px;
 }
 
+.abrir, .cerrar {
+    display: none;
+}
 
 .barra-inferior {
     display: none;
@@ -640,7 +643,7 @@ footer h3 {
 }
 @media screen and (min-width: 551px) {
     .nav-derecha {
-        display: flex !important; 
+        display: flex; 
     }
     
     .abrir, .cerrar {
@@ -867,7 +870,7 @@ footer h3 {
 
 @media screen and (min-width: 1201px) {
     main {
-        width: 100%;
+        width: calc(100% - 300px);
         max-width: 1400px;
         margin: 0 auto;
     }
@@ -1026,15 +1029,11 @@ footer h3 {
     display: none;
 }
 @media screen and (max-width: 1024px) {
-    .nav-derecha {
-        display: flex !important;
-        gap: 15px; 
-    }
     
     .nav-top {
         display: flex;
         justify-content: space-between;
-        height: 50px; 
+        height: 50px;
         padding: 10px 15px; 
 
     }
@@ -1095,28 +1094,6 @@ footer h3 {
      
 }
 
-@media screen and (max-width: 768px) {
-    .abrir {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
-    
-    .cerrar {
-        top: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
-    }
-    
-    .nav-btn a {
-        font-size: 18px;
-    }
-    
-    .btn-iniciar {
-        font-size: 16px;
-    }
-}
 .buscador {
     transition: all 0.3s
 }
@@ -1278,48 +1255,32 @@ footer h3 {
         font-size: 14px !important;
     }
 }
-
-@media screen and (max-width: 550px){
+@media screen and (max-width: 550px) {
     .abrir {
         display: block;
-        top: 15px;
-        right: 15px;
+        cursor: pointer;
+        z-index: 9999;
+    }
+
+}
+
+@media screen and (min-width: 551px) {
+    .abrir {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 555px) {
+
+    .nav-derecha.activo {
+        background: rgba(0, 0, 0, 0.50);
         z-index: 1000;
-        background: transparent;
-        border: none;
-        color: white;
-        font-size: 24px;
-        padding: 10px;
-        cursor: pointer;
-    }
-    
-    .cerrar {
-        display: none;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 1001;
-        background: rgba(255, 255, 255, 0.1);
-        border: none;
-        color: white;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        font-size: 24px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
         justify-content: center;
+        padding: 20px;
+        transition: left 0.3s ease !important;
     }
-    
-    .nav-derecha {
-        display: none;
-        background: rgba(0, 0, 0, 0.95);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 80px 20px 20px;
-        transition: left 0.3s ease;
-        z-index: 999;
+    .cerrar{
+        width: 100px;
+        background-color: red;
     }
 }
