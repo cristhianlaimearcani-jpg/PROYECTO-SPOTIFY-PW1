@@ -451,7 +451,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnPremium = document.querySelector('.premium');
     if (btnPremium) {
         btnPremium.addEventListener('click', function() {
-            window.location.href = 'premium.html'; 
+            window.location.href = 'html/premium.html'; 
         });
     
     }
