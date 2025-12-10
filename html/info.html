@@ -3,12 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pagina para mostrar informacion</title>
+    <title>Información de Canción</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/info.css">
+    
 </head>
 <body>
-    
+    <header>
+        <a href="../index.html">
+            <img src="../img/logo-spotify.png" class="logo">
+            <h1>Spotify</h1>
+        </a>
+    </header>
 
+    <main class="container">
+        <h2 id="tituloCancion"></h2>
+        
+        <img id="portada" class="portada" src="" alt="portada">
+        
+        <div class="informacion">
+            <div class="acercaDe">
+                <h3>Artista</h3>
+                <img id="imagenArtista" src="" alt="">
+                <p id="nombreArtista"></p>
+            </div>
+            
+            <div class="info">
+                <h3>Información</h3>
+                <p><strong>Título:</strong> <span id="tituloInfo"></span></p>
+                <p><strong>Artista:</strong> <span id="artistaInfo"></span></p>
+                <p><strong>Álbum:</strong> <span id="albumInfo"></span></p>
+            </div>
+            
+            <div class="letra">
+                <h3>Letra</h3>
+                <p id="textoLetra">Cargando letra...</p>
+            </div>
+        </div>
+    </main>
 
-    <script src="../js/main.js"></script>
+    <!-- Scripts -->
+    <script src="../js/info.js"></script>
 </body>
 </html>

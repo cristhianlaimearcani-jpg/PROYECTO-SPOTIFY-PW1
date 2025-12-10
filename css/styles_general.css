@@ -249,12 +249,10 @@ footer h3 {
         width: 70%;
     }
 }
-/* ANIMACIONES BÁSICAS PARA BOTÓN */
-button[type="submit"] {
+a{
     animation: aparecer 0.6s ease-out;
     transition: all 0.3s;
 }
-
 @keyframes aparecer {
     from {
         opacity: 0;
@@ -274,7 +272,6 @@ button[type="submit"]:hover {
 button[type="submit"]:active {
     transform: translateY(0);
 }
-/* ANIMACIONES MÍNIMAS PARA FORMULARIO */
 .login {
     animation: aparecer 0.5s ease;
 }
@@ -292,4 +289,22 @@ input[type="password"] {
 input[type="email"]:focus,
 input[type="password"]:focus {
     transform: scale(1.02);
+}
+
+.cancelar {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    height: 40px;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 90%;
+}
+.cancelar p {
+    margin-top: 10px;
+}
+.cancelar:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
 }

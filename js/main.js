@@ -74,7 +74,7 @@ function mostrarCanciones(listaCanciones, idContenedor) {
         `;
         divCancion.onclick = function() {
             reproducirCancion(cancion);
-            mostrarInfoEnSidebar(cancion);
+            irAInfo(cancion);
         };
         
         contenedor.appendChild(divCancion);
@@ -311,36 +311,7 @@ function letraCancion (idArtista, idCancion) {
     </div>
     `;
 }
-function obtenerLetraCancion(artista, titulo) {
-    artista = artista.replace(/[^\w\s]/gi, '');
-    titulo = titulo.replace(/[^\w\s]/gi, '');
 
-    const url = `https://api.lyrics.ovh/v1/${encodeURIComponent(artista)}/${encodeURIComponent(titulo)}`;
-    
-    console.log("Buscando letra para:", artista, "-", titulo);
-    console.log("URL:", url);
-    
-    fetch(url)
-        .then(response => {
-            console.log("Respuesta recibida, status:", response.status);
-            if (!response.ok) {
-                throw new Error('Letra no encontrada');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log("Datos recibidos:", data);
-            if (data.lyrics) {
-                mostrarLetraEnSidebar(data.lyrics);
-            } else {
-                mostrarLetraEnSidebar('Letra no disponible para esta canción');
-            }
-        })
-        .catch(error => {
-            console.error('Error al buscar letra:', error);
-            mostrarLetraEnSidebar('No se pudo cargar la letra de esta canción');
-        });
-}
 document.addEventListener('DOMContentLoaded', function() {
 
     const btnInicio = document.querySelector('.btn-inicio');
@@ -456,7 +427,7 @@ function mostrarArtistas(listaCanciones, idContenedor) {
         `;
         
         divArtista.onclick = function() {
-            mostrarInfoArtistaEnSidebar(artista.id);
+            mostrarInfoArtista(artista);
         };
         
         contenedor.appendChild(divArtista);
@@ -465,4 +436,73 @@ function mostrarArtistas(listaCanciones, idContenedor) {
     if (artistasUnicos.length === 0) {
         contenedor.innerHTML = '<p class="mensaje-biblioteca">No se encontraron artistas</p>';
     }
+}
+
+function mostrarInfoArtista(artista) {
+
+    const cancionFicticia = {
+        title: artista.name + " - Artista",
+        artist: {
+            name: artista.name,
+            picture_medium: artista.picture_medium,
+            picture_big: artista.picture_big || artista.picture_medium
+        },
+        album: {
+            title: "Artista - " + artista.name,
+            cover_medium: artista.picture_medium,
+            cover_big: artista.picture_big || artista.picture_medium
+        }
+    };
+    
+    localStorage.setItem('cancionSeleccionada', JSON.stringify(cancionFicticia));
+    
+    window.location.href = 'html/info.html';
+}
+
+if (window.location.pathname.includes("info.html")) {
+    
+    const cancion = JSON.parse(localStorage.getItem("cancionSeleccionada"));
+
+    if (cancion) {
+
+        const portada = document.getElementById("portada");
+        const imagenArtista = document.getElementById("imagenArtista");
+        const infoDiv = document.querySelector(".info");
+        const letraDiv = document.querySelector(".letra");
+
+      
+        portada.src = cancion.album.cover_big;
+
+        document.body.style.backgroundImage = `url(${cancion.album.cover_big})`;
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundPosition = "center";
+        document.body.style.backdropFilter = "blur(10px)";
+
+    
+        imagenArtista.src = cancion.artist.picture_medium;
+
+
+        infoDiv.innerHTML = `
+            <h2>${cancion.title}</h2>
+            <p><strong>Artista:</strong> ${cancion.artist.name}</p>
+            <p><strong>Álbum:</strong> ${cancion.album.title}</p>
+        `;
+        obtenerLetraCancion(cancion.artist.name, cancion.title)
+            .then(letra => letraDiv.innerHTML = `<pre>${letra}</pre>`)
+            .catch(() => letraDiv.innerHTML = "<p>No se encontró la letra.</p>");
+    }
+}
+
+
+function obtenerLetraCancion(artista, titulo) {
+    const url = `https://api.lyrics.ovh/v1/${encodeURIComponent(artista)}/${encodeURIComponent(titulo)}`;
+
+    return fetch(url)
+        .then(res => res.json())
+        .then(data => data.lyrics ? data.lyrics : "Letra no disponible");
+}
+
+function irAInfo(cancion) {
+    localStorage.setItem('cancionSeleccionada', JSON.stringify(cancion));
+    window.open("../html/info.html", "_blank");
 }
